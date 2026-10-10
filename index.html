@@ -1,1 +1,608 @@
-<h1> Abdul Wasea Portfolio </h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Abdul Wasea - Cloud DevOps Engineer. AWS, Kubernetes, CI/CD, Infrastructure as Code">
+    <meta name="keywords" content="DevOps, AWS, Kubernetes, CI/CD, GitHub Actions, Terraform, Linux">
+    <title>Abdul Wasea - Cloud DevOps Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h1 {
+            font-size: 1.5rem;
+            color: #667eea;
+            font-weight: 700;
+        }
+
+        nav a {
+            color: #333;
+            text-decoration: none;
+            margin-left: 2rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #667eea;
+        }
+
+        .hero {
+            color: white;
+            padding: 6rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .hero .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.85;
+            margin-bottom: 3rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.9rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid white;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #667eea;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border-color: white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: #667eea;
+        }
+
+        .about {
+            background: white;
+            padding: 4rem 0;
+            margin-top: 3rem;
+        }
+
+        .about h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #333;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .skills {
+            background: #f8f9fa;
+            padding: 4rem 0;
+        }
+
+        .skills h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .skill-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .skill-card h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .skill-card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .tag {
+            background: #667eea;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+
+        .projects {
+            background: white;
+            padding: 4rem 0;
+        }
+
+        .projects h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .project-card {
+            background: #f8f9fa;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+        }
+
+        .project-header h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-header .badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.3);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-body {
+            padding: 2rem;
+        }
+
+        .project-body p {
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .tech-tag {
+            background: #e9ecef;
+            color: #333;
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .project-links a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .project-links a:hover {
+            color: #764ba2;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #667eea;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            nav h1 {
+                font-size: 1.2rem;
+            }
+
+            nav a {
+                margin-left: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <h1>Abdul Wasea</h1>
+            <div>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <div class="container">
+            <h1>Cloud DevOps Engineer</h1>
+            <p>Building scalable, secure cloud infrastructure</p>
+            <p class="subtitle">AWS • Kubernetes • CI/CD • GitHub Actions • Infrastructure as Code</p>
+            <div class="cta-buttons">
+                <a href="https://github.com/AbdulWaseaDev" class="btn btn-primary">View GitHub</a>
+                <a href="#projects" class="btn btn-secondary">See My Work</a>
+            </div>
+        </div>
+    </div>
+
+    <section class="about" id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <p>
+                    I'm a DevOps engineer focused on designing and implementing cloud infrastructure,
+                    CI/CD pipelines, and Kubernetes deployments. I specialize in AWS services,
+                    Infrastructure as Code, Linux server administration, and automation with GitHub Actions.
+                </p>
+                <p style="margin-top: 1rem;">
+                    I build production-ready systems that scale reliably and deploy safely.
+                    Every project demonstrates real-world DevOps practices: Infrastructure as Code,
+                    comprehensive monitoring, automated testing, and multi-environment deployments.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="skills" id="skills">
+        <div class="container">
+            <h2>Core Competencies</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>☁️ Cloud & AWS</h3>
+                    <p>Designing and deploying scalable cloud infrastructure</p>
+                    <div class="skill-tags">
+                        <span class="tag">Lambda</span>
+                        <span class="tag">EC2</span>
+                        <span class="tag">DynamoDB</span>
+                        <span class="tag">API Gateway</span>
+                        <span class="tag">CloudWatch</span>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <h3>🐳 Kubernetes & Containers</h3>
+                    <p>Deploying and managing containerized applications</p>
+                    <div class="skill-tags">
+                        <span class="tag">k3s</span>
+                        <span class="tag">kubectl</span>
+                        <span class="tag">Deployments</span>
+                        <span class="tag">Docker</span>
+                        <span class="tag">ECR</span>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <h3>⚙️ Infrastructure as Code</h3>
+                    <p>Provisioning infrastructure through code</p>
+                    <div class="skill-tags">
+                        <span class="tag">Terraform</span>
+                        <span class="tag">CloudFormation</span>
+                        <span class="tag">SAM</span>
+                        <span class="tag">YAML</span>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <h3>🔄 CI/CD & Automation</h3>
+                    <p>Building automated deployment pipelines</p>
+                    <div class="skill-tags">
+                        <span class="tag">GitHub Actions</span>
+                        <span class="tag">Jenkins</span>
+                        <span class="tag">Pipeline Design</span>
+                        <span class="tag">Testing</span>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <h3>🐧 Linux & Server Admin</h3>
+                    <p>System configuration, hardening, and maintenance</p>
+                    <div class="skill-tags">
+                        <span class="tag">bash</span>
+                        <span class="tag">Ansible</span>
+                        <span class="tag">Security</span>
+                        <span class="tag">Monitoring</span>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <h3>🐍 Programming & Scripting</h3>
+                    <p>Automation and infrastructure scripting</p>
+                    <div class="skill-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Shell/bash</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects" id="projects">
+        <div class="container">
+            <h2>Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <span class="badge">Production</span>
+                        <h3>URL Shortener API</h3>
+                        <p>Serverless REST API on AWS</p>
+                    </div>
+                    <div class="project-body">
+                        <p>
+                            Production-ready serverless URL shortener with AWS Lambda,
+                            API Gateway, and DynamoDB. Features staging/production deployment pipeline,
+                            comprehensive monitoring, API key security, and automated tests.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">AWS Lambda</span>
+                            <span class="tech-tag">DynamoDB</span>
+                            <span class="tech-tag">API Gateway</span>
+                            <span class="tech-tag">GitHub Actions</span>
+                            <span class="tech-tag">CloudWatch</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">SAM</span>
+                            <span class="tech-tag">OIDC Auth</span>
+                        </div>
+                        <p style="font-size: 0.9rem; color: #999; margin-top: 1rem;">
+                            <strong>Key Features:</strong><br>
+                            • Multi-environment CI/CD with GitHub Actions<br>
+                            • Atomic click counter with DynamoDB<br>
+                            • API key rate limiting & quotas<br>
+                            • CloudWatch alarms + SNS alerts<br>
+                            • Unit & integration tests with pytest<br>
+                            • Custom domain setup guide
+                        </p>
+                        <div class="project-links">
+                            <a href="https://github.com/AbdulWaseaDev/url-shortener" target="_blank">GitHub Repo</a>
+                            <a href="https://url-shortener.berlintechs.com" target="_blank">Live API</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <span class="badge">DevOps</span>
+                        <h3>k3s Kubernetes on EC2</h3>
+                        <p>Kubernetes deployment & operations</p>
+                    </div>
+                    <div class="project-body">
+                        <p>
+                            Single-node k3s cluster on EC2 running FastAPI application.
+                            Demonstrates real Kubernetes fundamentals: plain YAML manifests,
+                            kubectl operations, pod scaling, rolling updates, and troubleshooting.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">k3s</span>
+                            <span class="tech-tag">kubectl</span>
+                            <span class="tech-tag">EC2</span>
+                            <span class="tech-tag">Kubernetes</span>
+                            <span class="tech-tag">Docker</span>
+                            <span class="tech-tag">YAML</span>
+                            <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag">Shell</span>
+                        </div>
+                        <p style="font-size: 0.9rem; color: #999; margin-top: 1rem;">
+                            <strong>Key Features:</strong><br>
+                            • Deployment, Service, ConfigMap manifests<br>
+                            • Pod scaling & rolling updates<br>
+                            • Liveness & readiness probes<br>
+                            • Resource requests & limits<br>
+                            • kubectl diagnostics (logs, describe, events)<br>
+                            • Troubleshooting guide with broken scenarios
+                        </p>
+                        <div class="project-links">
+                            <a href="https://github.com/AbdulWaseaDev/k3s-ec2-fastapi" target="_blank">GitHub Repo</a>
+                            <a href="https://github.com/AbdulWaseaDev/k3s-ec2-fastapi#troubleshooting" target="_blank">Docs</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <span class="badge">Coming Soon</span>
+                        <h3>Infrastructure as Code</h3>
+                        <p>Terraform AWS Multi-Environment</p>
+                    </div>
+                    <div class="project-body">
+                        <p>
+                            Comprehensive Terraform project demonstrating IaC best practices
+                            for AWS. Multi-environment setup (dev/prod), state management,
+                            security groups, monitoring, and GitHub Actions deployment pipelines.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Terraform</span>
+                            <span class="tech-tag">AWS</span>
+                            <span class="tech-tag">GitHub Actions</span>
+                            <span class="tech-tag">VPC</span>
+                            <span class="tech-tag">EC2</span>
+                            <span class="tech-tag">State Locking</span>
+                            <span class="tech-tag">Modules</span>
+                        </div>
+                        <p style="font-size: 0.9rem; color: #999; margin-top: 1rem;">
+                            <strong>Planned Features:</strong><br>
+                            • Multi-environment Terraform structure<br>
+                            • GitHub Actions plan/apply workflows<br>
+                            • Remote state with locking<br>
+                            • Security best practices<br>
+                            • Automated testing & validation
+                        </p>
+                        <div class="project-links">
+                            <a href="https://github.com/AbdulWaseaDev" target="_blank">Check GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <h2 style="margin-bottom: 1.5rem;">Get In Touch</h2>
+            <div class="social-links">
+                <a href="https://github.com/AbdulWaseaDev" target="_blank">GitHub</a>
+                <a href="https://linkedin.com/in/AbdulWaseaDev" target="_blank">LinkedIn</a>
+                <a href="mailto:hello@abdulwasea.dev" target="_blank">Email</a>
+            </div>
+            <p>&copy; 2026 Abdul Wasea. Cloud DevOps Engineer.</p>
+            <p style="font-size: 0.9rem; margin-top: 1rem; opacity: 0.8;">
+                Building reliable, scalable infrastructure on AWS • Kubernetes • CI/CD
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
