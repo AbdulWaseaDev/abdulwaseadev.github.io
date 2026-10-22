@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Abdul Wasea - Cloud DevOps Engineer. AWS, Kubernetes, CI/CD, Infrastructure as Code">
-    <meta name="keywords" content="DevOps, AWS, Kubernetes, CI/CD, GitHub Actions, Terraform, Linux">
+    <meta name="keywords" content="DevOps, AWS, Kubernetes, Docker, Terraform, CI/CD, GitHub Actions, Jenkins, Linux">
     <title>Abdul Wasea - Cloud DevOps Engineer</title>
     <style>
         * {
@@ -372,7 +372,7 @@
         <div class="container">
             <h1>Cloud DevOps Engineer</h1>
             <p>Building scalable, secure cloud infrastructure</p>
-            <p class="subtitle">AWS • Kubernetes • CI/CD • GitHub Actions • Infrastructure as Code</p>
+            <p class="subtitle">AWS • Docker • Kubernetes • Terraform • CI/CD • Linux Servers</p>
             <div class="cta-buttons">
                 <a href="https://github.com/AbdulWaseaDev" class="btn btn-primary">View GitHub</a>
                 <a href="#projects" class="btn btn-secondary">See My Work</a>
@@ -390,9 +390,10 @@
                     Infrastructure as Code, Linux server administration, and automation with GitHub Actions.
                 </p>
                 <p style="margin-top: 1rem;">
-                    I build production-ready systems that scale reliably and deploy safely.
-                    Every project demonstrates real-world DevOps practices: Infrastructure as Code,
-                    comprehensive monitoring, automated testing, and multi-environment deployments.
+                    Right now I run a 25-container production platform on Ubuntu for Berlin Tech Sol,
+                    deployed with Coolify and Jenkins. The projects below each come with their code,
+                    docs and tests: Terraform with separate dev and prod state, CloudWatch alarms,
+                    and staging-to-production pipelines.
                 </p>
             </div>
         </div>
@@ -410,6 +411,8 @@
                         <span class="tag">EC2</span>
                         <span class="tag">DynamoDB</span>
                         <span class="tag">API Gateway</span>
+                        <span class="tag">ECS</span>
+                        <span class="tag">RDS</span>
                         <span class="tag">CloudWatch</span>
                     </div>
                 </div>
@@ -422,6 +425,8 @@
                         <span class="tag">kubectl</span>
                         <span class="tag">Deployments</span>
                         <span class="tag">Docker</span>
+                        <span class="tag">Docker Compose</span>
+                        <span class="tag">Coolify</span>
                         <span class="tag">ECR</span>
                     </div>
                 </div>
@@ -453,8 +458,9 @@
                     <p>System configuration, hardening, and maintenance</p>
                     <div class="skill-tags">
                         <span class="tag">bash</span>
-                        <span class="tag">Ansible</span>
-                        <span class="tag">Security</span>
+                        <span class="tag">iptables</span>
+                        <span class="tag">SSL/TLS</span>
+                        <span class="tag">Cloudflare</span>
                         <span class="tag">Monitoring</span>
                     </div>
                 </div>
@@ -486,7 +492,7 @@
                         <p>
                             Production-ready serverless URL shortener with AWS Lambda,
                             API Gateway, and DynamoDB. Features staging/production deployment pipeline,
-                            comprehensive monitoring, API key security, and automated tests.
+                            CloudWatch alarms with SNS alerts, API key security, and automated tests.
                         </p>
                         <div class="project-tech">
                             <span class="tech-tag">AWS Lambda</span>
@@ -547,43 +553,80 @@
                         </p>
                         <div class="project-links">
                             <a href="https://github.com/AbdulWaseaDev/k3s-ec2-fastapi" target="_blank">GitHub Repo</a>
-                            <a href="https://github.com/AbdulWaseaDev/k3s-ec2-fastapi#troubleshooting" target="_blank">Docs</a>
+                            <a href="https://github.com/AbdulWaseaDev/k3s-ec2-fastapi/blob/main/TROUBLESHOOTING.md" target="_blank">Troubleshooting Guide</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="project-card">
                     <div class="project-header">
-                        <span class="badge">Coming Soon</span>
-                        <h3>Infrastructure as Code</h3>
-                        <p>Terraform AWS Multi-Environment</p>
+                        <span class="badge">Infrastructure as Code</span>
+                        <h3>Northstar Cloud Platform</h3>
+                        <p>AWS container platform in Terraform</p>
                     </div>
                     <div class="project-body">
                         <p>
-                            Comprehensive Terraform project demonstrating IaC best practices
-                            for AWS. Multi-environment setup (dev/prod), state management,
-                            security groups, monitoring, and GitHub Actions deployment pipelines.
+                            Terraform for a multi-AZ AWS platform: VPC, Application Load Balancer,
+                            ECS on EC2, and encrypted RDS PostgreSQL with credentials in Secrets Manager.
+                            Dev and prod have separate remote state, and every change goes through
+                            GitHub Actions.
                         </p>
                         <div class="project-tech">
                             <span class="tech-tag">Terraform</span>
                             <span class="tech-tag">AWS</span>
-                            <span class="tech-tag">GitHub Actions</span>
                             <span class="tech-tag">VPC</span>
-                            <span class="tech-tag">EC2</span>
-                            <span class="tech-tag">State Locking</span>
-                            <span class="tech-tag">Modules</span>
+                            <span class="tech-tag">ECS</span>
+                            <span class="tech-tag">RDS</span>
+                            <span class="tech-tag">ALB</span>
+                            <span class="tech-tag">Secrets Manager</span>
+                            <span class="tech-tag">GitHub Actions</span>
                         </div>
                         <p style="font-size: 0.9rem; color: #999; margin-top: 1rem;">
-                            <strong>Planned Features:</strong><br>
-                            • Multi-environment Terraform structure<br>
-                            • GitHub Actions plan/apply workflows<br>
-                            • Remote state with locking<br>
-                            • Security best practices<br>
-                            • Automated testing & validation
+                            <strong>Key Features:</strong><br>
+                            • Multi-AZ VPC with per-AZ NAT gateways in prod<br>
+                            • S3 remote state with DynamoDB locking, per environment<br>
+                            • fmt, validate and plan on every pull request<br>
+                            • Manual applies, prod gated by reviewer approval<br>
+                            • CloudWatch alarms with SNS email alerts<br>
+                            • RDS deletion protection and final snapshot in prod
                         </p>
                         <div class="project-links">
-                            <a href="https://github.com/AbdulWaseaDev" target="_blank">Check GitHub</a>
+                            <a href="https://github.com/AbdulWaseaDev/northstar-cloud-platform" target="_blank">GitHub Repo</a>
+                            <a href="https://github.com/AbdulWaseaDev/northstar-cloud-platform/blob/main/docs/ARCHITECTURE.md" target="_blank">Architecture</a>
                         </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <span class="badge">Production</span>
+                        <h3>Self-Hosted Platform</h3>
+                        <p>25 containers on one Ubuntu VPS</p>
+                    </div>
+                    <div class="project-body">
+                        <p>
+                            The production server behind Berlin Tech Sol. Apps are deployed with
+                            Coolify behind Caddy with automatic HTTPS, and Jenkins builds and deploys
+                            the company website. The code is private because the server runs client apps.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Docker</span>
+                            <span class="tech-tag">Coolify</span>
+                            <span class="tech-tag">Caddy</span>
+                            <span class="tech-tag">Jenkins</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">iptables</span>
+                            <span class="tech-tag">Cloudflare</span>
+                            <span class="tech-tag">Ubuntu</span>
+                        </div>
+                        <p style="font-size: 0.9rem; color: #999; margin-top: 1rem;">
+                            <strong>What runs on it:</strong><br>
+                            • Company website, built and deployed by Jenkins<br>
+                            • n8n, Nextcloud and Portainer<br>
+                            • PostgreSQL databases and client apps<br>
+                            • Container ports blocked from the internet with iptables<br>
+                            • DNS managed in Cloudflare
+                        </p>
                     </div>
                 </div>
             </div>
@@ -595,8 +638,8 @@
             <h2 style="margin-bottom: 1.5rem;">Get In Touch</h2>
             <div class="social-links">
                 <a href="https://github.com/AbdulWaseaDev" target="_blank">GitHub</a>
-                <a href="https://linkedin.com/in/AbdulWaseaDev" target="_blank">LinkedIn</a>
-                <a href="mailto:hello@abdulwasea.dev" target="_blank">Email</a>
+                <a href="https://www.linkedin.com/in/m-abdul-wasea" target="_blank">LinkedIn</a>
+                <a href="mailto:mabdulwaseasumra@gmail.com">Email</a>
             </div>
             <p>&copy; 2026 Abdul Wasea. Cloud DevOps Engineer.</p>
             <p style="font-size: 0.9rem; margin-top: 1rem; opacity: 0.8;">
